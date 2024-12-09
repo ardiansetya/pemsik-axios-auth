@@ -4,8 +4,8 @@ import RenderData from "../pages/RenderData";
 
 const AdminLayout = ({ children }) => {
   return (
-      <div className="h-full">
-        <div className="flex gap-5">
+
+        <div className="flex gap-5 h-[95vh]">
           <Sidebar />
           <div className="flex-1">
             <Header />
@@ -15,7 +15,7 @@ const AdminLayout = ({ children }) => {
             {children}
           </div>
         </div>
-      </div>
+
   );
 };
 

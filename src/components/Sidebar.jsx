@@ -2,7 +2,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <aside className="h-screen w-64 bg-gradient-to-br bg-slate-400 text-white flex flex-col justify-between rounded-xl">
+    <aside className="h-full w-64 bg-gradient-to-br  bg-slate-400 text-white flex flex-col justify-between rounded-xl">
       <div className="p-12">
         <h1 className="text-3xl font-bold">Data Axios</h1>
       </div>
