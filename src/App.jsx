@@ -1,17 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RegisterPage from "./pages/RegisterPage";
-import LoginPage from "./pages/LoginPage";
+import AdminLayout from "./layouts/AdminLayout";
 import RenderData from "./pages/RenderData";
 
 const App = () => {
-    <BrowserRouter>
-      <Routes>
-        <Route path="/register" element={<RegisterPage/>} />
-        <Route path="/login" element={<LoginPage/>} />
-        <Route path="/data" element={<RenderData/>} />
-      </Routes>
-    </BrowserRouter>
-
+  return (
+    <div className="App min-h-screen p-5 bg-slate-200">
+      <AdminLayout/>
+    
+    </div>
+  );
 };
 
 export default App;

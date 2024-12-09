@@ -2,13 +2,10 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <aside className="h-screen w-64 bg-gray-800 text-white flex flex-col justify-between">
-  
-      <div className="p-4">
-        <h1 className="text-2xl font-bold">Data Axios</h1>
+    <aside className="h-screen w-64 bg-gradient-to-br bg-slate-400 text-white flex flex-col justify-between rounded-xl">
+      <div className="p-12">
+        <h1 className="text-3xl font-bold">Data Axios</h1>
       </div>
-
-  
       <nav className="flex flex-col gap-4 px-4">
         <a
           href="#"

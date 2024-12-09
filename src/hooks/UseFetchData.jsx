@@ -20,7 +20,7 @@ export const UseFetchData = () => {
   return {posts:datas}
 };
 
-export const usePostData = (body) => {
+export const UsePostData = (body) => {
   const [datas, setDatas] = useState([])
 
   const fetchData = async () => {

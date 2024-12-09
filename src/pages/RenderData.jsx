@@ -1,36 +1,43 @@
 import { UseFetchData } from "../hooks/useFetchData";
 
 const RenderData = () => {
-    const {posts} = UseFetchData()
+  const { posts } = UseFetchData();
+  return (
+    <div className="overflow-hidden p-5 bg-white shadow-md rounded-md">
+      <table className="min-w-full border-collapse text-sm text-gray-700">
+        <thead>
+          <tr className="bg-gray-100 border-b">
+            <th className="px-4 py-2 text-left font-semibold text-gray-600">
+              ID
+            </th>
+            <th className="px-4 py-2 text-left font-semibold text-gray-600">
+              Title
+            </th>
+            <th className="px-4 py-2 text-left font-semibold text-gray-600">
+              Body
+            </th>
+          </tr>
+        </thead>
+      </table>
+      <div className="h-96 overflow-y-auto">
+        <table className="min-w-full border-collapse text-sm text-gray-700">
+          <tbody>
+            {posts.map((data, index) => (
+              <tr
+                key={index}
+                className={`border-b ${
+                  index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                } hover:bg-gray-100 transition`}>
+                <td className="px-4 py-3 text-gray-800">{data.id}</td>
+                <td className="px-4 py-3 text-gray-800">{data.title}</td>
+                <td className="px-4 py-3 text-gray-800">{data.body}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
 
-        return posts.map((data, index) => {
-            return (
-              <div key={index} className="overflow-x-auto">
-                <table className="min-w-full text-sm text-gray-700">
-                  <thead className="border-b border-gray-300 bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left font-medium">ID</th>
-                      <th className="px-6 py-3 text-left font-medium">Title</th>
-                      <th className="px-6 py-3 text-left font-medium">Body</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="hover:bg-gray-100 transition-colors">
-                      <td className="px-6 py-4 border-b border-gray-200">
-                        {data.id}
-                      </td>
-                      <td className="px-6 py-4 border-b border-gray-200">
-                        {data.title}
-                      </td>
-                      <td className="px-6 py-4 border-b border-gray-200">
-                        {data.body}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            );
-          });
-    
-  };
-  export default RenderData
+export default RenderData;
