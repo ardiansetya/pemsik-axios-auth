@@ -5,18 +5,20 @@ import App from "./App.jsx";
 import {  createBrowserRouter, RouterProvider } from "react-router-dom";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginPage />,
+    errorElement: <NotFoundPage/>,
   },
   {
     path: "/register",
     element: <RegisterPage />,
   },
   {
-    path: "/data",
+    path: "/dashboard",
     element: <App />
   },
 ]);

@@ -1,7 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -40,6 +44,24 @@ const RegisterPage = () => {
                     name: '',
                     email: '',
                     password: ''
+                });
+
+                const Toast = Swal.mixin({
+                  toast: true,
+                  position: "top-end",
+                  showConfirmButton: false,
+                  timer: 1500,
+                  timerProgressBar: true,
+                  didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                  },
+                });
+                Toast.fire({
+                  icon: "success",
+                  title: "Signed in successfully",
+                }).then(() => {
+                  navigate("/");
                 });
             } else {
                 setErrorMessage('Registration failed. Please try again.');

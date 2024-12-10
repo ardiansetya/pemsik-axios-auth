@@ -3,7 +3,7 @@ import { UseFetchData } from "../hooks/useFetchData";
 const RenderData = () => {
   const { posts } = UseFetchData();
   return (
-    <div className="overflow-hidden p-5 bg-white shadow-md rounded-md">
+    <div className=" overflow-hidden p bg-white shadow-md rounded-md">
       <table className="min-w-full border-collapse text-sm text-gray-700">
         <thead>
           <tr className="bg-gray-100 border-b">
