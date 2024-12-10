@@ -59,7 +59,7 @@ const RegisterPage = () => {
                 });
                 Toast.fire({
                   icon: "success",
-                  title: "Signed in successfully",
+                  title: "Register successfully",
                 }).then(() => {
                   navigate("/");
                 });
