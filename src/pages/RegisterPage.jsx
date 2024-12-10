@@ -79,7 +79,7 @@ const RegisterPage = () => {
 
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="container mx-auto p-5">
+        <div className="container p-5">
           <div className="max-w-lg mx-auto p-8 rounded-xl shadow-md bg-white flex flex-col items-center gap-6">
             <h1 className="text-2xl sm:text-3xl text-green-400 font-bold">
               Halaman Register

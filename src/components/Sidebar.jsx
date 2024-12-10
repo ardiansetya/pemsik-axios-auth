@@ -2,7 +2,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <aside className="h-full w-64   bg-slate-400 text-white flex flex-col   rounded-xl">
+    <aside className=" w-64 h-screen  bg-slate-400 text-white flex flex-col rounded-br-xl">
       <div className="p-12">
         <h1 className="text-3xl font-bold">Data Axios</h1>
       </div>

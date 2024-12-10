@@ -81,9 +81,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center border-4 border-green-600">
-      <div className="container mx-auto p-5 border-green-600 border-4">
-        <div className="max-w-md mx-auto p-6 rounded-2xl bg-white border-4 border-green-600 shadow-md flex flex-col items-center gap-5">
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center ">
+      <div className="container p-5 ">
+        <div className="max-w-md mx-auto p-6 rounded-2xl bg-white shadow-md flex flex-col items-center gap-5">
           <h1 className="text-2xl sm:text-3xl text-green-400 font-bold">
             Login
           </h1>

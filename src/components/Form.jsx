@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axiosInstance from '../axios/axiosInstance';
-import { usePostData } from '../hooks/useFetchData';
+
 
 
 const Form = () => {
@@ -65,12 +65,15 @@ const Form = () => {
   }
 
   return (
-    <>
-      <h2>Input Data</h2>
-      <form onSubmit={handleSubmit} >
-        <div>
-          <label htmlFor="name">Name:</label>
+    <div className="h-full py-5 flex flex-col justify-center items-center bg-white">
+      <h2 className="text-2xl font-bold mb-5">Input Data</h2>
+      <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-1">
+          <label className="font-bold" htmlFor="name">
+            Name:
+          </label>
           <input
+            className="px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 border border-gray-300 outline-none transition duration-200 w-full"
             type="text"
             id="name"
             name="name"
@@ -80,9 +83,12 @@ const Form = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="title">Title:</label>
+        <div className="flex flex-col gap-1">
+          <label className="font-bold" htmlFor="title">
+            Title:
+          </label>
           <input
+            className="px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 border border-gray-300 outline-none transition duration-200 w-full"
             type="text"
             id="title"
             name="title"
@@ -92,12 +98,15 @@ const Form = () => {
           />
         </div>
 
-        <button type="submit">Submit</button>
+        <button
+          className="bg-green-500 px-4 py-3 rounded-xl text-white font-bold hover:bg-green-600 transition-all duration-200"
+          type="submit">
+          Submit
+        </button>
       </form>
 
-
-{renderPost()}
-    </>
+      {renderPost()}
+    </div>
   );
 };
 

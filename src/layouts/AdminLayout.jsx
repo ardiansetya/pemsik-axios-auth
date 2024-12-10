@@ -1,18 +1,19 @@
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import RenderData from "../pages/RenderData";
+import Form from "../components/Form";
 
 const AdminLayout = ({ children }) => {
   return (
-    <div className="max-h-screen ">
-      <div className="flex gap-5 h-[95vh]">
+    <div className=" min-h-screen  border-red-200">
+      <div className="flex">
         <Sidebar />
         <div className="flex-1 ">
-          <Header />
-          <div className="py-5  ">
-            <RenderData />
-          </div>
-          {children}
+        <Header />
+        <div className="p-5">
+        <RenderData />
+        <Form/>
+        </div>
         </div>
       </div>
     </div>
