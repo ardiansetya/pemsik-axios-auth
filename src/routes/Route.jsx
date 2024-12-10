@@ -13,10 +13,12 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage />,
+    errorElement: <NotFoundPage />,
   },
   {
     path: "/dashboard",
     element: <App />,
+    errorElement: <NotFoundPage />,
   },
 ]);
 

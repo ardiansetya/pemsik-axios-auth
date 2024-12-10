@@ -78,76 +78,86 @@ const RegisterPage = () => {
     };
 
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="min-w-md mx-auto mt-3 w-1/3 h-[36rem] p-5 rounded-2xl bg-white flex flex-col justify-center items-center gap-3">
-          <h1 className="text-3xl text-green-400 font-bold">
-            Halaman Register
-          </h1>
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="container mx-auto p-5">
+          <div className="max-w-lg mx-auto p-8 rounded-xl shadow-md bg-white flex flex-col items-center gap-6">
+            <h1 className="text-2xl sm:text-3xl text-green-400 font-bold">
+              Halaman Register
+            </h1>
 
-          {responseMessage && (
-            <div className="bg-green-200 p-3 rounded-xl text-green-700 font-bold">
-              {responseMessage}
-            </div>
-          )}
+            {responseMessage && (
+              <div className="w-full bg-green-200 p-3 rounded-xl text-green-700 font-bold text-center">
+                {responseMessage}
+              </div>
+            )}
 
-          {errorMessage && (
-            <div className="bg-red-200 p-3 rounded-xl text-red-700 font-bold">
-              {errorMessage}
-            </div>
-          )}
+            {errorMessage && (
+              <div className="w-full bg-red-200 p-3 rounded-xl text-red-700 font-bold text-center">
+                {errorMessage}
+              </div>
+            )}
 
-          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-            <div className="flex flex-col justify-center gap-1 w-80">
-              <label className="font-bold text-green-400" htmlFor="name">
-                Nama
-              </label>
-              <input
-                required
-                value={form.name}
-                onChange={handleChange}
-                name="name"
-                className="px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 border border-gray-300 outline-none transition duration-200"
-                type="text"
-                placeholder="Nama"
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-1">
-              <label className="font-bold text-green-400" htmlFor="email">
-                Email
-              </label>
-              <input
-                required
-                value={form.email}
-                onChange={handleChange}
-                name="email"
-                className="px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 border border-gray-300 outline-none transition duration-200"
-                type="email"
-                placeholder="Email"
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-1">
-              <label className="font-bold text-green-400" htmlFor="password">
-                Password
-              </label>
-              <input
-                required
-                value={form.password}
-                onChange={handleChange}
-                name="password"
-                className="px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 border border-gray-300 outline-none transition duration-200"
-                type="password"
-                placeholder="Password"
-              />
-            </div>
-            <button
-              className={`bg-green-500 px-2 py-3 rounded-xl text-white font-bold hover:bg-green-600 transition-all duration-200 ${
-                isLoading ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-              type="submit"
-              disabled={isLoading}>
-              {isLoading ? "Registering..." : "Register"}
-            </button>
-          </form>
+            <form
+              className="flex flex-col gap-4 w-full"
+              onSubmit={handleSubmit}>
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-green-400" htmlFor="name">
+                  Nama
+                </label>
+                <input
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  name="name"
+                  id="name"
+                  className="px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 border border-gray-300 outline-none transition duration-200"
+                  type="text"
+                  placeholder="Nama"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-green-400" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  required
+                  value={form.email}
+                  onChange={handleChange}
+                  name="email"
+                  id="email"
+                  className="px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 border border-gray-300 outline-none transition duration-200"
+                  type="email"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-green-400" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  required
+                  value={form.password}
+                  onChange={handleChange}
+                  name="password"
+                  id="password"
+                  className="px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 border border-gray-300 outline-none transition duration-200"
+                  type="password"
+                  placeholder="Password"
+                />
+              </div>
+
+              <button
+                className={`bg-green-500 w-full py-3 rounded-xl text-white font-bold hover:bg-green-600 transition-all duration-200 ${
+                  isLoading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                type="submit"
+                disabled={isLoading}>
+                {isLoading ? "Registering..." : "Register"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     );
